@@ -14,7 +14,7 @@ The article then appears automatically:
 
 - On the home page, if it is one of the three most recent.
 - On `/writing/`, grouped by year. Each new topic becomes a filter.
-- In the Atom feed at `/feed.xml`.
+- In the RSS feed at `/feed.xml`. It is not linked on the page; news reader apps find it automatically.
 
 To feature a piece at the top of the home page, set `featured: true` on that entry and remove it from the old one.
 
