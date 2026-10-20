@@ -1,0 +1,15 @@
+---
+layout: null
+permalink: /kapil-dewade.vcf
+---
+BEGIN:VCARD
+VERSION:3.0
+N:Dewade;Kapil;;;
+FN:Kapil Dewade
+TITLE:Member of Technical Staff
+ORG:ID.me
+EMAIL;TYPE=INTERNET,PREF:{{ site.email }}
+URL:{{ site.url }}/
+X-SOCIALPROFILE;TYPE=linkedin:{{ site.links.linkedin }}
+NOTE:Software engineer in the San Francisco Bay Area. Identity and authentication\, distributed systems\, AI agent systems. Booking: {{ site.links.booking }}
+END:VCARD

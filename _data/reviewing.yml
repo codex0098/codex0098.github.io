@@ -1,0 +1,13 @@
+# Topics I can review. Shown in the "Reviewing" section of the home page.
+- area: Identity and authentication protocols
+  detail: OAuth 2.0, OpenID Connect, SAML, single sign-on, verifiable credentials and wallet presentation flows
+- area: Authentication and session security
+  detail: Session binding, cross-device sign-in flows, access control, security and privacy controls in production systems
+- area: Distributed systems and databases
+  detail: Replication, sharding, transaction isolation, multi-tenant architecture, event streaming
+- area: Data infrastructure
+  detail: Data lakes and large-scale data pipelines, analytics architecture
+- area: Cloud-native platforms
+  detail: Kubernetes, cloud migration, platform scalability and reliability
+- area: AI agents and retrieval systems
+  detail: Agent architectures, retrieval-augmented generation, assurance of AI agent outputs

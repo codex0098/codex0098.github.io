@@ -18,12 +18,18 @@ The article then appears automatically:
 
 To feature a piece at the top of the home page, set `featured: true` on that entry and remove it from the old one.
 
+## Google Search Console
+
+Paste the verification code from Search Console into `google_site_verification` in `_config.yml` and commit. The site adds the tag automatically.
+
 ## Files
 
 | Path | What it is |
 | --- | --- |
 | `_config.yml` | Name, links, email, and resume path |
 | `_data/writing.yml` | All articles and research |
+| `_data/reviewing.yml` | Reviewing interests shown on the home page |
+| `kapil-dewade.vcf` | "Save contact" card for phones and address books |
 | `index.html` | Home page |
 | `writing/index.html` | Writing index with search and topic filters |
 | `_layouts/default.html` | Shared page layout, metadata, and social preview tags |

@@ -10,12 +10,14 @@ body_class: page-home
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="kicker"><span class="dot" aria-hidden="true"></span><span>Member of Technical Staff at ID.me · San Francisco Bay Area</span></p>
-      <h1 id="hero-title">I build identity, authentication, and the distributed systems behind them.</h1>
+      <h1 id="hero-title" class="hero-name">Kapil Dewade</h1>
+      <p class="hero-statement">I build identity, authentication, and the distributed systems behind them.</p>
       <p class="lede">More than 14 years in software engineering and technical leadership, across identity and access management, multi-tenant platforms, cloud infrastructure, data pipelines, and AI agent systems.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="{{ site.resume | prepend: site.baseurl }}" download>Download resume<span class="btn-meta">PDF</span></a>
         <a class="btn btn-ghost" href="{{ site.baseurl }}/writing/">Read my writing</a>
       </div>
+      <p class="hero-note"><a href="#reviewing">Open to peer-review invitations <span aria-hidden="true">→</span></a></p>
     </div>
 
     <figure class="token" aria-labelledby="token-cap">
@@ -167,6 +169,25 @@ body_class: page-home
   </div>
 </section>
 
+<section class="section section-alt" id="reviewing" aria-labelledby="reviewing-title">
+  <div class="wrap reviewing-grid">
+    <div class="section-head">
+      <p class="eyebrow">Peer review</p>
+      <h2 id="reviewing-title">Reviewing interests</h2>
+      <p class="section-intro">I am open to invitations to review for conferences, workshops, and journals, including industry and practitioner tracks. These are the areas where my engineering and research work gives me a basis to evaluate submissions.</p>
+      <a class="btn btn-primary" href="mailto:{{ site.email }}?subject=Reviewer%20invitation&amp;body=Hello%20Kapil%2C%0D%0A%0D%0AVenue%20and%20track%3A%0D%0ASubmission%20topics%3A%0D%0ANumber%20of%20papers%3A%0D%0AReview%20deadline%3A%0D%0A">Send a reviewer invitation</a>
+    </div>
+    <dl class="interests">
+      {%- for r in site.data.reviewing %}
+      <div>
+        <dt>{{ r.area }}</dt>
+        <dd>{{ r.detail }}</dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
 <section class="section contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap contact-grid">
     <div>
@@ -177,6 +198,10 @@ body_class: page-home
         <button type="button" class="copy-btn" data-copy="{{ site.email }}" aria-describedby="copy-status">Copy</button>
         <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
       </p>
+      <div class="contact-actions">
+        <a class="btn btn-light" href="{{ site.links.booking }}" rel="noopener">Book a 30-minute call</a>
+        <a class="btn btn-outline-light" href="{{ site.baseurl }}/kapil-dewade.vcf" download>Save contact</a>
+      </div>
     </div>
     <ul class="contact-links">
       <li><a href="{{ site.resume | prepend: site.baseurl }}" download><span>Resume</span><span class="cl-meta">PDF, 1 page</span></a></li>
