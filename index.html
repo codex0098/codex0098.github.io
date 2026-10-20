@@ -1,0 +1,188 @@
+---
+layout: default
+nav: home
+body_class: page-home
+---
+{%- assign writing = site.data.writing | sort: "date" | reverse -%}
+{%- assign featured = writing | where: "featured", true | first -%}
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="kicker"><span class="dot" aria-hidden="true"></span><span>Member of Technical Staff at ID.me · San Francisco Bay Area</span></p>
+      <h1 id="hero-title">I build identity, authentication, and the distributed systems behind them.</h1>
+      <p class="lede">More than 14 years in software engineering and technical leadership, across identity and access management, multi-tenant platforms, cloud infrastructure, data pipelines, and AI agent systems.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ site.resume | prepend: site.baseurl }}" download>Download resume<span class="btn-meta">PDF</span></a>
+        <a class="btn btn-ghost" href="{{ site.baseurl }}/writing/">Read my writing</a>
+      </div>
+    </div>
+
+    <figure class="token" aria-labelledby="token-cap">
+      <figcaption id="token-cap" class="token-cap">
+        <span>Profile, as an ID token</span>
+        <span class="token-alg">decoded</span>
+      </figcaption>
+      <p class="token-raw" aria-hidden="true"><span class="seg-h">eyJhbGciOiJFUzI1NiJ9</span>.<span class="seg-p">eyJzdWIiOiJrYXBpbC1kZXdhZGUifQ</span>.<span class="seg-s">7Rw2…kQ</span></p>
+<pre class="token-body"><code><span class="p">{</span>
+  <span class="k">"sub"</span>: <span class="s">"kapil-dewade"</span>,
+  <span class="k">"name"</span>: <span class="s">"Kapil Dewade"</span>,
+  <span class="k">"title"</span>: <span class="s">"Member of Technical Staff"</span>,
+  <span class="k">"org"</span>: <span class="s">"ID.me"</span>,
+  <span class="k">"experience_years"</span>: <span class="s">"14+"</span>,
+  <span class="k">"management_years"</span>: <span class="s">"7+"</span>,
+  <span class="k">"locale"</span>: <span class="s">"San Francisco Bay Area"</span>,
+  <span class="k">"scope"</span>: <span class="s">"iam oauth2 oidc saml
+            distributed-systems
+            ai-agents rag"</span>
+<span class="p">}</span></code></pre>
+    </figure>
+  </div>
+</section>
+
+<section class="band" id="path" aria-labelledby="path-title">
+  <div class="wrap">
+    <h2 id="path-title" class="eyebrow">Career path</h2>
+    <ol class="path">
+      <li class="path-step">
+        <span class="path-years">2012 – 2016</span>
+        <span class="path-org">Venturit, Hyades Technology</span>
+        <span class="path-role">Software Engineer, then Senior Software Engineer</span>
+      </li>
+      <li class="path-step">
+        <span class="path-years">2016 – 2025</span>
+        <span class="path-org">EdCast, acquired by Cornerstone OnDemand in 2022</span>
+        <span class="path-role">Joined as one of the early engineers; grew to Associate Director of Engineering</span>
+      </li>
+      <li class="path-step is-current">
+        <span class="path-years">2025 – now</span>
+        <span class="path-org">ID.me</span>
+        <span class="path-role">Member of Technical Staff</span>
+      </li>
+    </ol>
+    <p class="path-note">MS in Software Engineering (2013). Full role history is on <a href="{{ site.links.linkedin }}" rel="noopener">LinkedIn</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="expertise" aria-labelledby="expertise-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Expertise</p>
+      <h2 id="expertise-title">What I work on</h2>
+    </div>
+    <ul class="scopes">
+      <li><code>iam</code><h3>Identity and access</h3><p>OAuth 2.0, OpenID Connect, SAML, single sign-on, user and group provisioning, access control</p></li>
+      <li><code>platform</code><h3>Platform architecture</h3><p>Multi-tenant applications, distributed systems, REST APIs, event streaming with Kafka</p></li>
+      <li><code>cloud</code><h3>Cloud and infrastructure</h3><p>AWS, Google Cloud, Kubernetes on EKS and GKE, Terraform</p></li>
+      <li><code>data</code><h3>Data systems</h3><p>Data lakes and large-scale pipelines with AWS Glue, PySpark, and Athena; Elasticsearch</p></li>
+      <li><code>ai</code><h3>AI systems</h3><p>AI agents with LangGraph and LangChain, retrieval-augmented generation, vector search</p></li>
+      <li><code>security</code><h3>Security and compliance</h3><p>SOC 2 controls, GDPR-compliant data processing, encryption and key management</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-alt" id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Selected work</p>
+      <h2 id="work-title">Engineering highlights</h2>
+    </div>
+    <ul class="work">
+      <li class="work-card">
+        <p class="metric"><span class="metric-num">+30%</span><span class="metric-unit">adoption in six months</span></p>
+        <h3>AI agents</h3>
+        <p>Built three or more AI agents with RAG and vector search on open-source LLMs. User adoption and content creation on the platform rose more than 30% over six months.</p>
+      </li>
+      <li class="work-card">
+        <p class="metric"><span class="metric-num">50%</span><span class="metric-unit">faster analytics processing</span></p>
+        <h3>Data lake and analytics</h3>
+        <p>Designed a data lake from scratch with BI integrations, using AWS Glue, PySpark, and Athena.</p>
+      </li>
+      <li class="work-card">
+        <p class="metric"><span class="metric-num">500+</span><span class="metric-unit">REST endpoints optimized</span></p>
+        <h3>API performance</h3>
+        <p>Migrated and optimized platform endpoints, improving system efficiency by more than 20%.</p>
+      </li>
+      <li class="work-card">
+        <p class="metric"><span class="metric-num">10+</span><span class="metric-unit">services moved to Google Cloud</span></p>
+        <h3>Cloud platform migration</h3>
+        <p>Moved backend infrastructure to Kubernetes on EKS and GKE, and led the migration from AWS to Google Cloud.</p>
+      </li>
+      <li class="work-card">
+        <p class="metric"><span class="metric-num metric-text">SSO</span><span class="metric-unit">provisioning, access control</span></p>
+        <h3>Enterprise identity and compliance</h3>
+        <p>Implemented single sign-on, automated user and group provisioning, and rule-based access control, along with SOC 2 controls and GDPR-compliant data processing.</p>
+      </li>
+      <li class="work-card">
+        <p class="metric"><span class="metric-num">2022</span><span class="metric-unit">acquisition</span></p>
+        <h3>Due diligence and integration</h3>
+        <p>Contributed to technical due diligence for Cornerstone OnDemand’s acquisition of EdCast, then to the platform integration that followed.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="writing" aria-labelledby="writing-title">
+  <div class="wrap">
+    <div class="section-head section-head-split">
+      <div>
+        <p class="eyebrow">Writing and research</p>
+        <h2 id="writing-title">Recent writing</h2>
+      </div>
+      <a class="more-link" href="{{ site.baseurl }}/writing/">View all writing ({{ writing | size }}) <span aria-hidden="true">→</span></a>
+    </div>
+
+    {%- if featured %}
+    <article class="feature">
+      <div class="feature-meta">
+        <span class="pill pill-amber">{{ featured.status }}</span>
+        <span>{{ featured.venue }} · {{ featured.date | date: "%B %Y" }}{% if featured.coauthors %} · with {{ featured.coauthors | join: ", " }}{% endif %}</span>
+      </div>
+      <h3><a href="{{ featured.url }}" rel="noopener">{{ featured.title }}<span class="ext" aria-hidden="true">↗</span></a></h3>
+      <p>{{ featured.summary }}</p>
+      {%- if featured.status_note %}<p class="feature-note">{{ featured.status_note }}</p>{% endif %}
+    </article>
+    {%- endif %}
+
+    <ul class="w-list w-list-compact">
+      {%- assign shown = 0 %}
+      {%- for w in writing %}
+        {%- if w.featured != true and shown < 3 %}
+          {% include writing-row.html item=w %}
+          {%- assign shown = shown | plus: 1 %}
+        {%- endif %}
+      {%- endfor %}
+    </ul>
+
+    <div class="facts">
+      <div class="fact">
+        <p class="eyebrow">Patent filings</p>
+        <p>Two provisional patent applications on AI agents and assurance. These are provisional filings, not issued patents.</p>
+      </div>
+      <div class="fact">
+        <p class="eyebrow">Recognition</p>
+        <p>ID.me internal award, October 2026, for key contributions to ID.me projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-title">Let’s talk about reviewing, research, or engineering.</h2>
+      <p class="contact-email">
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <button type="button" class="copy-btn" data-copy="{{ site.email }}" aria-describedby="copy-status">Copy</button>
+        <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
+      </p>
+    </div>
+    <ul class="contact-links">
+      <li><a href="{{ site.resume | prepend: site.baseurl }}" download><span>Resume</span><span class="cl-meta">PDF, 1 page</span></a></li>
+      <li><a href="{{ site.links.linkedin }}" rel="me noopener"><span>LinkedIn</span><span class="cl-meta">in/kapil-dewade</span></a></li>
+      <li><a href="{{ site.links.github }}" rel="me noopener"><span>GitHub</span><span class="cl-meta">codex0098</span></a></li>
+      <li><a href="{{ site.links.medium }}" rel="me noopener"><span>Medium</span><span class="cl-meta">@kapildewade_52733</span></a></li>
+    </ul>
+  </div>
+</section>

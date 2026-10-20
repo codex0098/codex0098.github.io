@@ -1,0 +1,19 @@
+{%- assign w = include.item -%}
+<li class="w-row" data-topics="{{ w.topics | join: '|' | downcase }}" data-search="{{ w.title | downcase | escape }} {{ w.summary | downcase | escape }} {{ w.venue | downcase }} {{ w.topics | join: ' ' | downcase }} {{ w.series | downcase }}">
+  <time class="w-date" datetime="{{ w.date | date: '%Y-%m-%d' }}">{{ w.date | date: "%b %-d" }}</time>
+  <div class="w-main">
+    <h3 class="w-title"><a href="{{ w.url }}" rel="noopener">{{ w.title }}<span class="ext" aria-hidden="true">↗</span></a></h3>
+    {%- if include.summary %}
+    <p class="w-summary">{{ w.summary }}</p>
+    {%- endif %}
+    <p class="w-meta">
+      <span>{{ w.venue }}</span>
+      {%- if w.coauthors %}<span>with {{ w.coauthors | join: ", " }}</span>{% endif %}
+      {%- if w.series %}<span>Series: {{ w.series }}</span>{% endif %}
+      {%- if w.status %}<span class="pill pill-amber">{{ w.status }}</span>{% endif %}
+    </p>
+  </div>
+  <ul class="w-topics" aria-label="Topics">
+    {%- for t in w.topics %}<li>{{ t }}</li>{% endfor %}
+  </ul>
+</li>

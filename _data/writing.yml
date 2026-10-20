@@ -1,0 +1,71 @@
+# Writing and research. Order does not matter: pages sort by date, newest first.
+#
+# To add an article, copy one entry and edit it:
+#   title:     exact article title
+#   url:       full link to the article
+#   date:      YYYY-MM-DD (publication date)
+#   venue:     where it is published, e.g. Medium or LinkedIn
+#   coauthors: list of co-authors (omit if none)
+#   topics:    one or more topics; each becomes a filter on /writing/
+#   series:    optional series name; articles with the same name are grouped
+#   status:    optional label, e.g. "Experimental protocol proposal"
+#   featured:  true to feature it on the home page (keep only one)
+#   summary:   one or two plain sentences
+
+- title: "Bound Verifiable Presentation (BoundVP): Binding Wallet Presentations to Browser Sessions"
+  url: https://medium.com/@kapildewade_52733/bound-verifiable-presentation-boundvp-binding-wallet-presentations-to-browser-sessions-949a6b710f84
+  date: 2026-10-18
+  venue: Medium
+  coauthors: [Kaustubh Khatri]
+  topics: [Identity, Protocol design]
+  status: Experimental protocol proposal
+  status_note: Design under evaluation; not peer-reviewed or standardized.
+  featured: true
+  summary: >-
+    A protocol design study of session fixation in cross-device identity flows,
+    where a valid wallet presentation can still sign in the wrong browser. BoundVP
+    proposes binding the presentation to the browser session that started it. The
+    article sets out its limits and open questions, and a prototype has not yet been built.
+
+- title: "Beyond Tiny URL: When Transactions meet Tiny URL"
+  url: https://www.linkedin.com/pulse/beyond-tiny-url-when-transactions-meet-kaustubh-khatri-xuspc/
+  date: 2026-08-17
+  venue: LinkedIn
+  coauthors: [Kaustubh Khatri]
+  topics: [System design, Databases]
+  series: URL shortener system design
+  summary: >-
+    Dirty reads, read skew, phantoms, lost updates, and write skew in short-URL
+    creation, and when Serializable isolation is worth the cost.
+
+- title: "Beyond TinyURL: What Happens When the Sharding Meets Tiny URL? Part 3"
+  url: https://www.linkedin.com/pulse/beyond-tinyurl-what-happens-when-sharding-meets-tiny-url-khatri-rmbtf/
+  date: 2026-08-04
+  venue: LinkedIn
+  coauthors: [Kaustubh Khatri]
+  topics: [System design, Databases]
+  series: URL shortener system design
+  summary: >-
+    What changes when one database is no longer enough: choosing a shard key and
+    the core considerations for sharding a URL shortener.
+
+- title: "Beyond TinyURL: What Happens When Replication Meets a URL Shortener?"
+  url: https://www.linkedin.com/pulse/beyond-tinyurl-what-happens-when-replication-meets-url-khatri-9x5gc/
+  date: 2026-07-13
+  venue: LinkedIn
+  coauthors: [Kaustubh Khatri]
+  topics: [System design, Databases]
+  series: URL shortener system design
+  summary: >-
+    How adding replicas changes a URL shortener's architecture for availability
+    and read scaling.
+
+- title: "URL Shortener System Design: The Details Most People Miss"
+  url: https://www.linkedin.com/pulse/url-shortener-system-design-details-most-people-miss-kaustubh-khatri-i9bpc/
+  date: 2026-07-03
+  venue: LinkedIn
+  coauthors: [Kaustubh Khatri]
+  topics: [System design]
+  series: URL shortener system design
+  summary: >-
+    The production details of a URL shortener design that a basic version leaves out.

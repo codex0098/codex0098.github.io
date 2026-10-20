@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if page.title %}
+  {%- assign full_title = page.title | append: " · " | append: site.title %}
+  {%- else %}
+  {%- assign full_title = site.title | append: " · Software Engineer, Identity and Distributed Systems" %}
+  {%- endif %}
+  {%- assign meta_description = page.description | default: site.description | strip_newlines | strip %}
+  {%- assign canonical = page.url | replace: "index.html", "" | prepend: site.baseurl | prepend: site.url %}
+  <title>{{ full_title }}</title>
+  <meta name="description" content="{{ meta_description | escape }}">
+  <meta name="author" content="{{ site.author.name }}">
+  <link rel="canonical" href="{{ canonical }}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f5f8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="{% if page.url == '/' %}profile{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ full_title | escape }}">
+  <meta property="og:description" content="{{ meta_description | escape }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kapil Dewade, software engineer working on identity and distributed systems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ full_title | escape }}">
+  <meta name="twitter:description" content="{{ meta_description | escape }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/og-image.png">
+
+  <link rel="icon" href="{{ site.baseurl }}/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}: writing" href="{{ site.baseurl }}/feed.xml">
+  <link rel="preload" href="{{ site.baseurl }}/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ site.baseurl }}/assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/site.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  {%- if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}/",
+    "email": "mailto:{{ site.email }}",
+    "jobTitle": "{{ site.author.role }}",
+    "worksFor": { "@type": "Organization", "name": "{{ site.author.employer }}" },
+    "homeLocation": { "@type": "Place", "name": "{{ site.author.location }}" },
+    "knowsAbout": ["Identity and access management", "OAuth 2.0", "OpenID Connect", "SAML", "Multi-tenant architecture", "Distributed systems", "Kubernetes", "Event streaming", "Data pipelines", "AI agents", "Retrieval-augmented generation"],
+    "sameAs": ["{{ site.links.linkedin }}", "{{ site.links.github }}", "{{ site.links.medium }}"]
+  }
+  </script>
+  {%- endif %}
+</head>
+<body class="{{ page.body_class }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ site.baseurl }}/" aria-label="Kapil Dewade, home">
+        <span class="brand-mark" aria-hidden="true">KD</span>
+        <span class="brand-name">Kapil Dewade</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="{{ site.baseurl }}/#work"{% if page.nav == 'home' %} data-section="work"{% endif %}>Work</a></li>
+          <li><a href="{{ site.baseurl }}/writing/"{% if page.nav == 'writing' %} aria-current="page"{% endif %}>Writing</a></li>
+          <li><a href="{{ site.resume | prepend: site.baseurl }}">Resume</a></li>
+          <li><a href="{{ site.baseurl }}/#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Color theme: system">
+        <svg class="ti ti-system" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        <svg class="ti ti-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="ti ti-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+{{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© {{ site.time | date: "%Y" }} {{ site.author.name }}. Views are my own. Employer names describe past and current roles only and do not imply endorsement.</p>
+      <ul class="footer-links">
+        <li><a href="{{ site.links.linkedin }}" rel="me noopener">LinkedIn</a></li>
+        <li><a href="{{ site.links.github }}" rel="me noopener">GitHub</a></li>
+        <li><a href="{{ site.links.medium }}" rel="me noopener">Medium</a></li>
+        <li><a href="{{ site.baseurl }}/feed.xml">Feed</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="{{ site.baseurl }}/assets/js/site.js" defer></script>
+</body>
+</html>

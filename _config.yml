@@ -1,0 +1,31 @@
+# Site settings. GitHub Pages builds this site with Jekyll on every push.
+title: Kapil Dewade
+description: >-
+  Software engineer in the San Francisco Bay Area working on identity and access
+  management, distributed systems, cloud platforms, and AI agent systems.
+url: https://codex0098.github.io
+baseurl: ""
+lang: en
+email: kapildewade@gmail.com
+
+author:
+  name: Kapil Dewade
+  role: Member of Technical Staff
+  employer: ID.me
+  location: San Francisco Bay Area
+
+links:
+  linkedin: https://www.linkedin.com/in/kapil-dewade/
+  github: https://github.com/codex0098
+  medium: https://medium.com/@kapildewade_52733
+
+resume: /Kapil-Dewade-Resume.pdf
+
+timezone: America/Los_Angeles
+markdown: kramdown
+
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - Gemfile
+  - Gemfile.lock

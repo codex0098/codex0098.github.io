@@ -1,0 +1,56 @@
+---
+layout: default
+title: Writing and research
+description: Articles and protocol research by Kapil Dewade on identity, authentication, and distributed systems design.
+nav: writing
+body_class: page-writing
+---
+{%- assign writing = site.data.writing | sort: "date" | reverse -%}
+{%- assign all_topics = "" | split: "" -%}
+{%- for w in writing -%}{%- assign all_topics = all_topics | concat: w.topics -%}{%- endfor -%}
+{%- assign all_topics = all_topics | uniq | sort -%}
+
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow"><a href="{{ site.baseurl }}/">Kapil Dewade</a> / Writing</p>
+    <h1>Writing and research</h1>
+    <p class="lede">Articles and protocol research on identity, authentication, and distributed systems. Co-authors are credited on each piece.</p>
+  </div>
+</section>
+
+<section class="section section-tight" aria-label="All writing">
+  <div class="wrap">
+    <div class="filters" id="filters" hidden>
+      <div class="search">
+        <label for="q" class="sr-only">Search writing</label>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Search titles and summaries" autocomplete="off">
+      </div>
+      <div class="chips" role="group" aria-label="Filter by topic">
+        <button type="button" class="chip" data-topic="" aria-pressed="true">All</button>
+        {%- for t in all_topics %}
+        <button type="button" class="chip" data-topic="{{ t | downcase }}" aria-pressed="false">{{ t }}</button>
+        {%- endfor %}
+      </div>
+      <p class="result-count" id="result-count" role="status" aria-live="polite">{{ writing | size }} pieces</p>
+    </div>
+
+    {%- assign current_year = "" %}
+    {%- for w in writing %}
+      {%- assign y = w.date | date: "%Y" %}
+      {%- if y != current_year %}
+        {%- unless forloop.first %}</ul></div>{% endunless %}
+        <div class="year-group" data-year="{{ y }}">
+        <h2 class="year">{{ y }}</h2>
+        <ul class="w-list">
+        {%- assign current_year = y %}
+      {%- endif %}
+      {% include writing-row.html item=w summary=true %}
+      {%- if forloop.last %}</ul></div>{% endif %}
+    {%- endfor %}
+
+    <p class="empty" id="empty" hidden>No writing matches that search. <button type="button" class="link-btn" id="reset">Clear filters</button></p>
+
+    <p class="feed-note">Follow new pieces with the <a href="{{ site.baseurl }}/feed.xml">Atom feed</a>, or on <a href="{{ site.links.medium }}" rel="noopener">Medium</a> and <a href="{{ site.links.linkedin }}" rel="noopener">LinkedIn</a>.</p>
+  </div>
+</section>

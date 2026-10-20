@@ -1,0 +1,31 @@
+---
+layout: null
+---
+{%- assign writing = site.data.writing | sort: "date" | reverse -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title | xml_escape }}: writing and research</title>
+  <subtitle>{{ site.description | strip_newlines | strip | xml_escape }}</subtitle>
+  <link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="{{ site.url }}{{ site.baseurl }}/writing/" rel="alternate" type="text/html"/>
+  <id>{{ site.url }}{{ site.baseurl }}/writing/</id>
+  <updated>{{ writing.first.date | date: "%Y-%m-%dT00:00:00Z" }}</updated>
+  <author><name>{{ site.author.name | xml_escape }}</name></author>
+  {%- for w in writing %}
+  <entry>
+    <title>{{ w.title | xml_escape }}</title>
+    <link href="{{ w.url | xml_escape }}" rel="alternate" type="text/html"/>
+    <id>{{ w.url | xml_escape }}</id>
+    <published>{{ w.date | date: "%Y-%m-%dT00:00:00Z" }}</published>
+    <updated>{{ w.date | date: "%Y-%m-%dT00:00:00Z" }}</updated>
+    <author><name>{{ site.author.name | xml_escape }}</name></author>
+    {%- for c in w.coauthors %}
+    <contributor><name>{{ c | xml_escape }}</name></contributor>
+    {%- endfor %}
+    {%- for t in w.topics %}
+    <category term="{{ t | xml_escape }}"/>
+    {%- endfor %}
+    <summary>{{ w.summary | strip_newlines | strip | xml_escape }}</summary>
+  </entry>
+  {%- endfor %}
+</feed>
