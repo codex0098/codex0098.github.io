@@ -69,3 +69,13 @@
   series: URL shortener system design
   summary: >-
     The production details of a URL shortener design that a basic version leaves out.
+
+- title: "Spark vs. Ray: Data Centric to AI Centric"
+  url: https://www.linkedin.com/pulse/spark-vs-ray-data-centric-ai-kaustubh-khatri-2i3bc/
+  date: 2025-11-10
+  venue: LinkedIn
+  coauthors: [Kaustubh Khatri]
+  topics: [Distributed systems, AI systems]
+  summary: >-
+    How Apache Spark, built for ETL, batch processing, and SQL analytics, compares
+    with Ray for distributed training and AI-centric workloads.
